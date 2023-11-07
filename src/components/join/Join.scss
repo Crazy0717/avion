@@ -1,0 +1,91 @@
+.join_club {
+  width: 100%;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  margin-top: 48px;
+  .big_box {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    gap: 16px;
+    padding: 68px 0 54px 0;
+
+    h1,
+    p {
+      color: #2a254b;
+      text-align: center;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 50.4px */
+    }
+    p {
+      width: 30%;
+      text-align: center;
+      font-size: 16px;
+      line-height: 150%; /* 24px */
+    }
+    .signUp_part {
+      margin-top: 56px;
+      input {
+        width: 472px;
+        background-color: #f9f9f9;
+        color: #2a254b;
+        padding: 17px 10px 17px 32px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        opacity: 0.5;
+        border: none;
+        outline: none;
+      }
+      button {
+        padding: 16px 32px;
+        background: #2a254b;
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .join_club {
+    .big_box {
+      h1,
+      p {
+        font-size: 20px;
+      }
+      p {
+        width: 90%;
+        font-size: 14px;
+      }
+      .signUp_part {
+        margin-top: 56px;
+        input {
+          width: 65%;
+        }
+        button {
+          padding: 14px 30px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .join_club {
+    .big_box {
+      p {
+        width: 60%;
+      }
+    }
+  }
+}

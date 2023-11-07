@@ -1,0 +1,141 @@
+.join_club2 {
+  height: 444px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://basabasi.co/wp-content/uploads/2018/10/pexels-photo-48828-1020x510.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-top: 48px;
+  .big_box {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 68px 0 54px 0;
+    h1,
+    p {
+      color: #ffffff;
+      text-align: center;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 50.4px */
+    }
+    p {
+      width: 30%;
+      text-align: center;
+      font-size: 16px;
+      line-height: 150%; /* 24px */
+    }
+    .checks {
+      display: flex;
+      gap: 36px;
+      margin: 30px 0;
+      .check {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #fff;
+        p {
+          width: auto;
+        }
+      }
+    }
+    .signUp_part {
+      input {
+        width: 472px;
+        background-color: #f9f9f9;
+        color: #2a254b;
+        padding: 17px 10px 17px 32px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border: none;
+        outline: none;
+      }
+      button {
+        padding: 16px 32px;
+        background: #2a254b;
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        border: none;
+        &:active {
+          opacity: 0.5;
+          background-color: #4e4d93;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .join_club2 {
+    .big_box {
+    align-items: flex-start;
+    padding: 24px 37px 35px 24px;
+      h1,
+      p {
+        font-size: 24px;
+        text-align: start;
+      }
+      p {
+        width: 90%;
+        font-size: 14px;
+      }
+      .checks {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 0;
+        .check {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: #fff;
+          p {
+            width: auto;
+          }
+        }
+      }
+      .signUp_part {
+        margin-top: 0px;
+        input {
+          width: 65%;
+        }
+        button {
+          padding: 14px 30px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .join_club2 {
+    .big_box {
+      p {
+        width: 60%;
+      }
+    }
+  }
+}
+/////////////////////////////////////////
+@media screen and (min-width:570px) and (max-width:640px){
+    .join_club2{
+        margin-bottom: 100px;
+    }
+}
+@media screen and (min-width:640px) and (max-width:700px){
+    .join_club2{
+        margin-bottom: 120px;
+    }
+}
+@media screen and (min-width:700px) and (max-width:1200px){
+    .join_club2{
+        margin-bottom: 150px;
+    }
+}

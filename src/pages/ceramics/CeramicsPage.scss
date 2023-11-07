@@ -1,0 +1,260 @@
+.ceramics {
+  padding: 0;
+  padding-top: 60px;
+  .product_deatils {
+    width: 100%;
+    height: 680px;
+    display: flex;
+    gap: 62px;
+    .img_part {
+      width: 50%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .info_part {
+      width: 50%;
+      height: 100%;
+      padding: 70px 40px 2px 40px;
+      .title {
+        color: #2a254b;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .price {
+        color: #12131a;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 13px;
+      }
+      .description {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 40px;
+
+        h1 {
+          color: #2a254b;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        p {
+          width: 80%;
+          color: #505977;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          li {
+            color: #505977;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &::before {
+              content: "" "";
+              width: 9px;
+              height: 9px;
+              border-radius: 50%;
+              background-color: #2a254b;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #2a254b;
+            }
+          }
+        }
+      }
+      .dimensions {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        margin-top: 46px;
+
+        .big_box {
+          display: flex;
+          gap: 56px;
+
+          .box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            h2 {
+              color: #2a254b;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+
+            p {
+              color: #505977;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+          }
+        }
+      }
+      .amount {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        margin-top: 48px;
+        h3 {
+          color: #2a254b;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        input {
+          width: 122px;
+          height: 46px;
+          padding: 10px;
+        }
+        button {
+          padding: 16px 32px;
+          background-color: #2a254b;
+          color: #fff;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%;
+          /* 24px */
+          margin-left: 170px;
+
+          &:active {
+            background-color: #505977;
+          }
+        }
+      }
+    }
+  }
+
+  .also {
+    position: relative;
+    top: 70px;
+    left: -33vw;
+    z-index: 2;
+    color: #2a254b;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ceramics {
+    padding: 0;
+
+    .product_deatils {
+      height: auto;
+      gap: 0px;
+      flex-direction: column;
+
+      .img_part {
+        width: 100%;
+        height: 92vh;
+      }
+
+      .info_part {
+        width: 100%;
+        height: 100%;
+        padding: 28px 40px 2px 24px;
+
+        .title {
+          font-size: 24px;
+        }
+
+        .price {
+          font-size: 20px;
+        }
+
+        .description {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          margin-top: 28px;
+
+          p {
+            font-size: 14px;
+          }
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            li {
+              font-size: 14px;
+              gap: 5px;
+
+              &::before {
+                width: 5px;
+                height: 5px;
+              }
+            }
+          }
+        }
+
+        .dimensions {
+          gap: 16px;
+          margin-top: 28px;
+
+          .big_box {
+            gap: 102px;
+          }
+        }
+
+        .amount {
+          align-items: start;
+          flex-direction: column;
+          gap: 22px;
+          margin-top: 32px;
+
+          input {
+            width: 94%;
+            padding: 10px;
+          }
+
+          button {
+            width: 94%;
+            padding: 16px 0;
+            display: flex;
+            justify-content: center;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .also {
+      left: -12.5%;
+    }
+  }
+}

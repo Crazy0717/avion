@@ -1,0 +1,49 @@
+.bars_close_block{
+  width: 90%;
+  height: 89vh;
+  background-color: rgba(255, 0, 0, 0);
+  position: fixed;
+  left: 0;
+  top: 70px;
+  z-index: 5;
+  transition: all linear .3s;
+  &.on{
+  background-color: rgba(0, 0, 0, 0.342);
+  }
+}
+
+.bars {
+  width: 50%;
+  height: 89vh;
+  position: fixed;
+  right: -100%;
+  top: 70px;
+  z-index: 5;
+  background-color: white;
+  display: flex;
+  padding: 10px 10px 10px 20px;
+  transition: all 0.3s linear;
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      height: 50px;
+      border-bottom: 1px solid gray;
+      display: flex;
+      align-items: center;
+      padding: 6px;
+      &:last-child {
+        border-bottom: none;
+      }
+      &:hover {
+        background-color: gainsboro;
+      }
+      &:active {
+        background-color: rgb(83, 78, 78);
+      }
+    }
+  }
+  &.show {
+    right: 0;
+  }
+}
