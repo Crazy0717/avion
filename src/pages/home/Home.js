@@ -6,6 +6,7 @@ import Ceramics from "../../components/newCeramics/Ceramics";
 import PopProducts from "../../components/pop_products/PopProducts";
 import Join from "../../components/join/Join";
 import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 
 
 const Home = ({setBarState,barState}) => {
@@ -55,6 +56,7 @@ const Home = ({setBarState,barState}) => {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 };

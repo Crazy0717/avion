@@ -1,5 +1,7 @@
 import React from "react";
 import "./Bars.scss";
+import { NavLink } from "react-router-dom";
+
 
 const Bars = ({ setBarState, barState }) => {
   return (
@@ -7,13 +9,27 @@ const Bars = ({ setBarState, barState }) => {
      
       <div className={barState ? "bars show" : "bars"}>
         <ul>
-          <li>Plant pots</li>
-          <li>Ceramics</li>
-          <li>Tables</li>
-          <li>Chairs</li>
-          <li>Crockery</li>
-          <li>Tableware</li>
-          <li>Cutlery</li>
+          <li>
+            <NavLink to="/plant_pots">Plant pots</NavLink>
+          </li>
+          <li>
+            <NavLink to="/ceramics">Ceramics</NavLink>
+          </li>
+          <li>
+            <NavLink to="/tables">Tables</NavLink>
+          </li>
+          <li>
+            <NavLink to="/chairs">Chairs</NavLink>
+          </li>
+          <li>
+            <NavLink to="/crockery">Crockery</NavLink>
+          </li>
+          <li>
+            <NavLink to="/tableware">Tableware</NavLink>
+          </li>
+          <li>
+            <NavLink to="/cuterly">Cutlery</NavLink>
+          </li>
         </ul>
       </div>
     </div>

@@ -53,60 +53,77 @@
 }
 
 // //////////////////////////////
-@media screen and (max-width:1200px) {
-    .plant_pots {
-        bottom: 0;
-        top: 10vh;
-        header {
+@media screen and (max-width: 1200px) {
+  .plant_pots {
+    bottom: 0;
+    top: 10vh;
+    header {
+      width: 100%;
+      height: 96vh;
+      position: relative;
+      display: flex;
+      flex-direction: column-reverse;
+      .background_img {
+        width: 100%;
+        height: 100%;
+        img {
           width: 100%;
-          height: 96vh;
-          position: relative;
-          display: flex;
-          flex-direction: column-reverse;
-          .background_img {
-            width: 100%;
-            height: 100%;
-            img {
-              width: 100%;
-              height: 100%;
-            }
-          }
-          .box {
-            width: 100%;
-            height: 380px;
-            padding: 20px 60px 20px 26px;
-            position: relative;
-            top: 0;
-            left: 0;
-            h1 {
-              font-size: 24px;
-            }
-            p {
-              font-size: 18px;
-              margin-top: 12px;
-            }
-            button {
-                width: 94%;
-              padding: 16px 32px;
-              font-size: 16px;
-              margin-top: 32px;
-            }
-          }
+          height: 100%;
         }
       }
-}
-@media screen and (min-width:570px) and (max-width:660px){
-    .plant_pots{
-        top: 20vh;
+      .box {
+        width: 100%;
+        height: 380px;
+        padding: 20px 60px 20px 26px;
+        position: relative;
+        top: 0;
+        left: 0;
+        h1 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 18px;
+          margin-top: 12px;
+        }
+        button {
+          width: 94%;
+          padding: 16px 32px;
+          font-size: 16px;
+          margin-top: 32px;
+        }
+      }
     }
+  }
 }
-@media screen and (min-width:660px) and (max-width:702px){
-    .plant_pots{
-        top: 25vh;
+@media screen and (min-width: 490px) and (max-width: 594px) {
+  .plant_pots {
+    header {
+      .box {
+        padding: 180px 40px 40px 40px;
+      }
     }
+  }
 }
-@media screen and (min-width:702px) and (max-width:1200px){
-    .plant_pots{
-        top: 30vh;
+@media screen and (min-width: 570px) and (max-width: 660px) {
+  .plant_pots {
+    top: 20vh;
+    header {
+      .box {
+        padding: 180px 40px 40px 40px;
+        h1 {
+          font-size: 24px;
+        }
+      }
     }
+  }
+}
+@media screen and (min-width: 660px) and (max-width: 702px) {
+  .plant_pots {
+    top: 25vh;
+  }
+}
+@media screen and (min-width: 702px) and (max-width: 1200px) {
+  .plant_pots {
+    top: 30vh;
+  }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CeramicsPage.scss";
 import Navbar2 from "../../components/navbar2/Navbar2";
 import Ceramics from "../../components/newCeramics/Ceramics";
@@ -7,6 +7,7 @@ import Join from "../../components/join/Join";
 import Footer2 from "../../components/footer2/Footer2";
 
 const CeramicsPage = ({ setBarState, barState }) => {
+  const [quantityValue, setQuantityValue] = useState(1)
   return (
     <div className="ceramics">
       <Navbar2 setBarState={setBarState} barState={barState} />
@@ -50,7 +51,11 @@ const CeramicsPage = ({ setBarState, barState }) => {
           </div>
           <div className="amount">
             <h3>Amount:</h3>
-            <input type="number" />
+            <div className="quantity_box">
+              <div onClick={() => setQuantityValue(quantityValue-1)} className="minus">-</div>
+              <p className="quantity">{quantityValue}</p>
+              <div onClick={() => setQuantityValue(quantityValue+1)} className="plus">+</div>
+            </div>
             <button>Add to cart</button>
           </div>
         </div>
