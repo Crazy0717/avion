@@ -1,22 +1,23 @@
 import React from "react";
 import "./Navbar.scss";
 import { Link, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser} from "@fortawesome/free-regular-svg-icons";
+import { faBars, faCartShopping, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
 
 const Navbar = ({ setBarState, barState }) => {
   return (
     <nav className="navbar">
       <div className="top_nav">
-        <i class="fa-solid fa-magnifying-glass"></i>
+      <Link><FontAwesomeIcon icon={faMagnifyingGlass}/></Link>
         <Link to={"/"}><img src="./images/Avion.png" alt="" /></Link>
 
         <div className="user_part">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <i class="fa-solid fa-user"></i>
-          <i class="fa-solid fa-magnifying-glass phone"></i>
-          <i
-            onClick={() => setBarState(!barState)}
-            class="fa-solid fa-bars phone"
-          ></i>
+          <Link to={"/cart"}><FontAwesomeIcon icon={faCartShopping} /></Link>
+          <Link><FontAwesomeIcon icon={faUser} /></Link>
+          <Link><FontAwesomeIcon icon={faMagnifyingGlass} className="phone"/></Link>
+          <FontAwesomeIcon onClick={() => setBarState(!barState)} icon={faBars} className="phone"/>
         </div>
       </div>
       <div className="nav_categories">

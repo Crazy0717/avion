@@ -1,32 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PopProducts.scss";
+import useFetch from "../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const PopProducts = () => {
+  
+  const [url, setUrl] = useState("http://localhost:3000/data2");
+  const { data, error, isPending } = useFetch(url);
   return (
     <div className="popular_products">
       <h1 className="pop">Our popular products</h1>
       <div className="boxes">
-        <div className="box">
+      {
+        data && data.map(item =>{
+          return (<Link to={`/ceramics/data2/${item.id}`} className="box" key={item.id}>
           <div className="img_part">
-            <img src="./images/large.png" alt="" />
+            <img src={item.img} alt="" />
           </div>
-          <h2>The Poplar suede sofa</h2>
-          <p>£980</p>
-        </div>
-        <div className="box">
-          <div className="img_part">
-            <img src="./images/Photo (1).png" alt="" />
-          </div>
-          <h2>The Dandy chair</h2>
-          <p>£250</p>
-        </div>
-        <div className="box">
-          <div className="img_part">
-            <img src="./images/Photo (2).png" alt="" />
-          </div>
-          <h2>The Dandy chair</h2>
-          <p>£250</p>
-        </div>
+          <h2>{item.name}</h2>
+          <p>${item.price}</p>
+        </Link>)
+        })
+      }  
       </div>
       <button>View collection</button>
     </div>

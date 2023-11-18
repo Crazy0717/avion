@@ -1,0 +1,408 @@
+.about .main_title{
+  text-align: center;
+  margin: 50px 0;
+}
+
+.about .mainhead {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about .mainhead .text {
+  width: 50%;
+  padding: 50px 20px 50px 50px;
+  position: relative;
+  font-family: "Clash Display", sans-serif;
+}
+
+.about .mainhead .text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about .mainhead .text p {
+  font-size: 20px;
+}
+
+.about .mainhead .text button {
+  padding: 15px 30px;
+  font-size: 14px;
+  border: none;
+  background-color: #f9f9f9;
+  color: #2a254b;
+  position: absolute;
+  bottom: 40px;
+}
+
+.about .mainfooter {
+  width: 100%;
+  text-align: center;
+  padding: 0 50px;
+  font-family: "Clash Display", sans-serif;
+}
+
+.about .mainfooter h2 {
+  color: #2a254b;
+  margin: 50px 0;
+}
+
+.about .mainfooter .boxes {
+  margin: 50px 0 150px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  color: #2a254b;
+}
+
+.about .mainfooter .boxes .box h3 {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.about .mainfooter .boxes .box p {
+  font-size: 18px;
+}
+
+.about .singup {
+  width: 100%;
+  background-image: url(../../../public/images/Photo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 80px;
+  font-family: "Clash Display", sans-serif;
+}
+
+.about .icon2 {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.about .icon2 i {
+  color: #f9f9f9;
+}
+
+.about .singup .join {
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+}
+
+.about .singup .join h1 {
+  font-size: 36px;
+  color: white;
+  margin: 50px 0 10px 0;
+}
+
+.about .singup .join p {
+  font-size: 16px;
+  color: white;
+  margin: 20px 0 20px 0;
+  font-weight: 600;
+}
+
+.about .singup .join form {
+  margin-bottom: 50px;
+}
+
+.about .singup .join form input {
+  width: 470px;
+  height: 50px;
+  font-size: 16px;
+  outline: none;
+  padding: 0 20px;
+  background-color: #f9f9f9;
+  color: #2a254b;
+  border: none;
+}
+
+.about .singup .join form button {
+  width: 120px;
+  height: 50px;
+  border: none;
+  background-color: #2a254b;
+  color: white;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 747px) {
+  .about h1 {
+    text-align: start;
+    padding: 0 20px;
+  }
+  .about .mainhead {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  .about .mainhead .text {
+    width: 100%;
+    height: auto;
+    padding: 0 20px 70px 20px;
+    position: relative;
+  }
+
+  .about .mainhead .text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .about .mainhead .text p {
+    font-size: 20px;
+  }
+
+  .about .mainhead .text button {
+    width: 90%;
+    padding: 15px 30px;
+    bottom: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .about .mainhead .img {
+    width: 100%;
+    margin-bottom: -8px;
+  }
+  .about .mainhead .img img {
+    width: 100%;
+  }
+  .about .mainfooter {
+    text-align: start;
+    padding: 0 20px;
+  }
+
+  .about .mainfooter h2 {
+    margin-top: 20px;
+  }
+
+  .about .mainfooter .boxes {
+    margin: 20px 0 80px 0;
+    display: block;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: start;
+  }
+
+  .about .mainfooter .boxes .box i {
+    margin: 15px 0 -8px 0;
+  }
+
+  .about .mainfooter .boxes .box p {
+    font-size: 18px;
+  }
+
+  .about .singup {
+    width: 100%;
+    background-image: url(../../../public/images/Photo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20px 50px;
+    font-family: "Clash Display", sans-serif;
+    text-align: start;
+  }
+
+  .about .icon2 {
+    display: block;
+    gap: 30px;
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  .about .icon2 i {
+    color: #f9f9f9;
+  }
+  .about .singup .join {
+    width: 100%;
+    text-align: start;
+    background-color: transparent;
+    border: none;
+  }
+
+  .about .singup .join h1 {
+    font-size: 36px;
+    color: white;
+    margin: 0 0 0 0;
+  }
+
+  .about .singup .join p {
+    font-size: 16px;
+    color: white;
+    margin: 20px 0 20px 0;
+    font-weight: 600;
+  }
+
+  .about .singup .join form {
+    margin-bottom: 50px;
+    display: flex;
+    position: relative;
+  }
+
+  .about .singup .join form input {
+    width: 470px;
+    height: 50px;
+    font-size: 16px;
+    outline: none;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    color: #2a254b;
+    border: none;
+  }
+
+  .about .singup .join form button {
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: #2a254b;
+    color: white;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 747px) and (max-width: 1000px) {
+  .about h1 {
+    text-align: start;
+    padding: 0 20px;
+  }
+  .about .mainhead {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  .about .mainhead .text {
+    width: 100%;
+    height: auto;
+    padding: 0 20px 70px 20px;
+    position: relative;
+  }
+
+  .about .mainhead .text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .about .mainhead .text p {
+    font-size: 20px;
+  }
+
+  .about .mainhead .text button {
+    width: 90%;
+    padding: 15px 30px;
+    bottom: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .about .mainhead .img {
+    width: 100%;
+    margin-bottom: -8px;
+  }
+  .about .mainhead .img img {
+    width: 100%;
+  }
+  .about .mainfooter {
+    text-align: start;
+    padding: 0 20px;
+  }
+
+  .about.mainfooter h2 {
+    margin-top: 20px;
+  }
+
+  .about .mainfooter .boxes {
+    margin: 20px 0 80px 0;
+    display: block;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: start;
+  }
+
+  .about .mainfooter .boxes .box i {
+    margin: 15px 0 -8px 0;
+  }
+
+  .about .mainfooter .boxes .box p {
+    font-size: 18px;
+  }
+
+  .about .singup {
+    width: 100%;
+    background-image: url(../../../public/images/Photo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20px 50px;
+    font-family: "Clash Display", sans-serif;
+    text-align: start;
+  }
+
+  .about .icon2 {
+    display: block;
+    gap: 30px;
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  .about .icon2 i {
+    color: #f9f9f9;
+  }
+  .about .singup .join {
+    width: 100%;
+    text-align: start;
+    background-color: transparent;
+    border: none;
+  }
+
+  .about .singup .join h1 {
+    font-size: 36px;
+    color: white;
+    margin: 0 0 0 0;
+  }
+
+  .about .singup .join p {
+    font-size: 16px;
+    color: white;
+    margin: 20px 0 20px 0;
+    font-weight: 600;
+  }
+
+  .about .singup .join form {
+    margin-bottom: 50px;
+    display: flex;
+    position: relative;
+  }
+
+  .about .singup .join form input {
+    width: 470px;
+    height: 50px;
+    font-size: 16px;
+    outline: none;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    color: #2a254b;
+    border: none;
+  }
+
+  .about .singup .join form button {
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: #2a254b;
+    color: white;
+    font-size: 16px;
+  }
+}

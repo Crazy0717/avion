@@ -1,0 +1,82 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "The Dandy chair ",
+      "image": "/images/Photo.png",
+      "price": "250"
+    },
+
+    {
+      "id": 2,
+      "name": "TRustic Vase Set",
+      "image": "/images/Photo (1).png",
+      "price": "155"
+    },
+
+    {
+      "id": 3,
+      "name": "The Silky Vase",
+      "image": "/images/Photo (2).png",
+      "price": "125"
+    },
+
+    {
+      "id": 4,
+      "name": "The Lucy Lamp",
+      "image": "/images/Photo (3).png",
+      "price": "399"
+    }
+  ],
+
+  "data2": [
+    {
+      "id": 1,
+      "img": "/images/Large.png",
+      "name": "The Poplar suede sofa",
+      "price": "170"
+    },
+
+    {
+      "id": 2,
+      "img": "/images/Photo.png",
+      "name": "The Dandy chair",
+      "price": "250"
+    },
+    {
+      "id": 3,
+      "img": "/images/Photo (4).png",
+      "name": "The Dandy chair",
+      "price": "620"
+    }
+  ],
+  "data3": [
+    {
+      "id": 1,
+      "name": "The Dandy chair ",
+      "image": "/images/1.png",
+      "price": "250"
+    },
+
+    {
+      "id": 2,
+      "name": "The Dandy chair ",
+      "image": "/images/2.png",
+      "price": "250"
+    },
+
+    {
+      "id": 3,
+      "name": "The Dandy chair ",
+      "image": "/images/3.png",
+      "price": "250"
+    },
+
+    {
+      "id": 4,
+      "name": "The Dandy chair ",
+      "image": "/images/4.png",
+      "price": "250"
+    }
+  ]
+}

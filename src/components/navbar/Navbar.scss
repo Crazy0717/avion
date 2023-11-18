@@ -19,7 +19,9 @@
     .user_part {
       display: flex;
       gap: 16px;
-
+      a{
+        color: black;
+      }
       .phone {
         display: none;
       }
@@ -32,12 +34,14 @@
       justify-content: center;
       padding: 20px 0;
       li {
-        color: #726e8d;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         cursor: pointer;
+        a{
+        color: #726e8d;
+        }
         &:hover {
           color: black;
         }

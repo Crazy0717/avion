@@ -1,5 +1,8 @@
 import React from 'react'
 import "./Join.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
+
 
 const Join2 = () => {
   return (
@@ -12,15 +15,15 @@ const Join2 = () => {
           </p>
           <div className="checks">
             <div className="check">
-            <i class="fa-solid fa-circle-check"></i>
+            <FontAwesomeIcon icon={faCircleCheck} />
             <p>Exclusive offers</p>
             </div>
             <div className="check">
-            <i class="fa-solid fa-circle-check"></i>
+            <FontAwesomeIcon icon={faCircleCheck} />
             <p>Free events</p>
             </div>
             <div className="check">
-            <i class="fa-solid fa-circle-check"></i>
+            <FontAwesomeIcon icon={faCircleCheck} />
             <p>Large discounts</p>
             </div>
           </div>
