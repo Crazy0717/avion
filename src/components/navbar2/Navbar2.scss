@@ -41,12 +41,14 @@
       gap: 44px;
       justify-content: center;
       li {
-        color: #726e8d;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         cursor: pointer;
+        a{
+        color: #726e8d;
+        }
         &:hover {
           color: black;
         }

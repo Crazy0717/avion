@@ -1,44 +1,33 @@
-import React from "react"
-import "./Ceramics.scss"
+import React, { useState } from "react";
+import "./Ceramics.scss";
+import useFetch from "../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const Ceramics = () => {
+  const [url, setUrl] = useState("http://localhost:3000/data");
+  const { data, error, isPending } = useFetch(url);
   return (
     <>
       <div className="ceramics">
         <div className="boxes">
-          <div className="box">
-            <div className="img_part">
-              <img src="./images/Photo.png" alt="" />
-            </div>
-            <h2>The Dandy chair</h2>
-            <p>£250</p>
-          </div>
-          <div className="box">
-            <div className="img_part">
-              <img src="./images/Photo (1).png" alt="" />
-            </div>
-            <h2>TRustic Vase Set</h2>
-            <p>£155</p>
-          </div>
-          <div className="box">
-            <div className="img_part">
-              <img src="./images/Photo (2).png" alt="" />
-            </div>
-            <h2>The Silky Vase</h2>
-            <p>£125</p>
-          </div>
-          <div className="box">
-            <div className="img_part">
-              <img src="./images/Photo (3).png" alt="" />
-            </div>
-            <h2>The Lucy Lamp</h2>
-            <p>£399</p>
-          </div>
+          {
+            data && data.map(item =>{
+              return ( <Link to={`/ceramics/${item.id}`} className="box" key={item.id}>
+              <div className="img_part">
+                <img src={item.image} alt="" />
+              </div>
+              <h2>{item.name}</h2>
+              <p>{item.price}</p>
+            </Link>)
+             
+            })
+          }
+              
         </div>
-        <button>View collection</button>
+        <button className="view">View collection</button>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Ceramics
+export default Ceramics;

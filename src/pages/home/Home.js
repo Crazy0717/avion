@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Different from "../../components/diferent/Different";
 import Ceramics from "../../components/newCeramics/Ceramics";
 import PopProducts from "../../components/pop_products/PopProducts";
@@ -8,11 +7,10 @@ import Join from "../../components/join/Join";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 
-
-const Home = ({setBarState,barState}) => {
+const Home = ({ setBarState, barState }) => {
   return (
-    <>
-        <Navbar setBarState={setBarState} barState={barState}/>
+    <div className="home">
+      <Navbar setBarState={setBarState} barState={barState} />
 
       <header>
         <div className="info_part">
@@ -57,7 +55,7 @@ const Home = ({setBarState,barState}) => {
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

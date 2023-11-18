@@ -1,6 +1,9 @@
 import React from "react";
 import "./Navbar2.scss";
 import { Link, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faCartShopping, faMagnifyingGlass, faTruckFast, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 const Navbar2 = ({ setBarState, barState }) => {
   return (
@@ -8,15 +11,15 @@ const Navbar2 = ({ setBarState, barState }) => {
       <div className="ad_part">
         <div className="support_div"></div>
         <div className="title">
-          <i class="fa-solid fa-truck-fast"></i>
+          <FontAwesomeIcon icon={faTruckFast} />
           <p>Free delivery on all orders over £50 with code easter checkout</p>
         </div>
-        <i class="fa-sharp fa-solid fa-xmark close_ad"></i>
+        <FontAwesomeIcon className="close_ad" icon={faXmark} />
       </div>
 
       <div className="nav_categories">
         <Link to={"/"}>
-          <img src="./images/Avion.png" alt="" />
+          <img src="/images/Avion.png" alt="" />
         </Link>
         <ul>
           <li>
@@ -42,14 +45,20 @@ const Navbar2 = ({ setBarState, barState }) => {
           </li>
         </ul>
         <div className="user_part">
-          <i class="fa-solid fa-magnifying-glass"></i>
-
-          <i class="fa-solid fa-cart-shopping"></i>
-          <i class="fa-solid fa-user"></i>
-          <i
+          <Link>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </Link>
+          <Link to={"/cart"}>
+            <FontAwesomeIcon icon={faCartShopping} />
+          </Link>
+          <Link>
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
+          <FontAwesomeIcon
             onClick={() => setBarState(!barState)}
-            class="fa-solid fa-bars phone"
-          ></i>
+            icon={faBars}
+            className="phone"
+          />
         </div>
       </div>
     </nav>
