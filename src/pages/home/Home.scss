@@ -55,7 +55,7 @@ header {
     }
   }
 }
-.home main{
+.home main {
   margin: 0;
   padding: 0;
 }
@@ -167,15 +167,23 @@ header {
     }
   }
 }
-
-@media screen and (min-width:718px) and (max-width:900px){
+@media screen and (min-width: 718px) and (max-width: 900px) {
   .main_lest {
     flex-direction: column;
     height: 628px;
-    
+
     .img_part {
       width: 100%;
       height: 46%;
+    }
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .main_lest {
+    .info_part {
+      button {
+        margin-top: 30%;
+      }
     }
   }
 }

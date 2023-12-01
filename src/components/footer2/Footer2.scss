@@ -45,10 +45,13 @@
         .icon {
           display: flex;
           gap: 24px;
-          i {
-            color: white;
-            cursor: pointer;
-          }
+          
+            .i {
+              color: white;
+              cursor: pointer;
+            }
+          
+          
         }
       }
     }

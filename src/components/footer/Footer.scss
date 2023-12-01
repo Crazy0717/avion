@@ -96,7 +96,7 @@
     .icons {
       display: flex;
       gap: 24px;
-      i {
+      .i {
         color: white;
         cursor: pointer;
       }
@@ -121,13 +121,15 @@
           width: 66%;
           padding: 17px 10px 17px 32px;
         }
+        button {
+          padding: 14px 32px;
+        }
       }
     }
     .footer_bottom {
       width: 100%;
       height: 40px;
       margin-top: 16px;
-      // margin-bottom: 50px;
       justify-content: center;
       h2 {
         width: auto;
@@ -141,5 +143,29 @@
 @media screen and (min-width: 452px) and (max-width: 800px) {
   .footer {
     height: 488px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .footer {
+    .footer_top {
+      .signUp_part {
+        input {
+          width: 100%;
+          padding: 18.5px 10px 18px 32px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 430px) {
+  .footer {
+    .footer_top {
+      .signUp_part {
+        button {
+          padding: 14px 24px;
+        }
+      }
+    }
   }
 }

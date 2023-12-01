@@ -1,33 +1,77 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Cart.scss";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
-import useFetch from "../../hooks/useFetch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const Cart = ({setBarState,barState}) => {
-  const [url, setUrl] = useState("");
-  const { data, error, isPending } = useFetch(url);
-  const [cartData, setCartData] = useState([])
+const Cart = ({
+  cartQuantity,
+  setCartQuantity,
+  setBarState,
+  barState,
+  productId,
+  setProductId,
+}) => {
+  const [quantityValue, setQuantityValue] = useState(0);
 
-  const [quantityValue, setQuantityValue] = useState(1);
-  const handleQuan = () => {
-    quantityValue < 2?setQuantityValue(1):setQuantityValue(quantityValue - 1);
+  // move to top
+  const handleTop = () => {
+    document.documentElement.scrollTop = 0;
   };
-  // const addToCart = (id) => {
-  //   const object = data.filter((item) => {
-  //     return item.id == id;
-  //   });
 
-  //   if (cartData.includes(object[0])) {
-  //     alert("❗ This product has been added to the cart");
-  //   } else {
-  //     setCartData([...cartData, object[0]]);
-  //   }
-  // };
-  
+  // calculate price
+  const [totalPrice, setTotalPrice] = useState(0);   
+  const handlePrice = () => {
+    var currentValue = 0;
+    productId.forEach((element) => {
+      currentValue += element.quantity * element.price;
+    });
+    setTotalPrice(currentValue);
+  };
+
+  const handleQuan = (id, num) => {
+    let init = 1;
+    productId.forEach((data, index) => {
+      if (data.id == id) {
+        init = index;
+      }
+    });
+
+    const tempArr = productId;
+    tempArr[init].quantity += num;
+
+    if (tempArr[init].quantity === 0) {
+      tempArr[init].quantity = 1;
+    } else {
+      setProductId([...tempArr]);
+    }
+
+    handlePrice();
+  };
+
+  const removeProductid = (id) =>{
+    setProductId(productId.filter(item =>{return item.id !== id}))
+    setCartQuantity(cartQuantity-1)
+    handlePrice()
+    
+  }
+
+  useEffect(() => {
+    handlePrice();
+    handleTop();
+  }, []);
+
+
+  var nn  = 0
+
   return (
     <div className="Cart">
-      <Navbar setBarState={setBarState} barState={barState}/>
+      <Navbar
+        cartQuantity={cartQuantity}
+        setBarState={setBarState}
+        barState={barState}
+      />
       <main>
         <h1>Your shopping cart</h1>
         <div className="cart_box">
@@ -37,68 +81,52 @@ const Cart = ({setBarState,barState}) => {
             <p>Total</p>
           </div>
           <div className="product_section">
-            <div className="box">
-              <div className="img_part">
-                <img src="./images/Photo (2).png" alt="" />
-              </div>
-              <div className="info_part">
-                <div className="left_part">
-                  <h2 className="name">Graystone vase</h2>
-                  <p className="description">
-                    A timeless ceramic vase with a tri color grey glaze.
-                  </p>
-                  <p className="price">$85</p>
-                </div>
-                <div className="right_part">
-                  <div className="quantity_box">
-                    <div onClick={handleQuan} className="minus">
-                      -
+            {productId &&
+              productId.map((item) => {
+                nn += Number(item.price)
+                return (
+                  <div className="box" key={item.id}>
+                    <div className="img_part">
+                      <img src={item.image} alt="" />
                     </div>
-                    <p className="quantity">{quantityValue}</p>
-                    <div
-                      onClick={() => setQuantityValue(quantityValue + 1)}
-                      className="plus"
-                    >
-                      +
-                    </div>
-                  </div>
-                  <p className="totalProductPrice">$85</p>
-                </div>
-              </div>
-            </div>
-            <div className="box">
-              <div className="img_part">
-                <img src="./images/Product Image.png" alt="" />
-              </div>
-              <div className="info_part">
-                <div className="left_part">
-                  <h2 className="name">Graystone vase</h2>
-                  <p className="description">
-                    A timeless ceramic vase with a tri color grey glaze.
-                  </p>
-                  <p className="price">$85</p>
-                </div>
-                <div className="right_part">
-                  <div className="quantity_box">
-                    <div onClick={handleQuan} className="minus">
-                      -
-                    </div>
-                    <p className="quantity">{quantityValue}</p>
-                    <div
-                      onClick={() => setQuantityValue(quantityValue + 1)}
-                      className="plus">
-                      +
+                    <div className="info_part">
+                      <div className="left_part">
+                        <h2 className="name">{item.name}</h2>
+                        <p className="description">
+                          A timeless ceramic vase with a tri color grey glaze.
+                        </p>
+                        <p className="price">${item.price}</p>
+                      </div>
+                      <div className="right_part">
+                        <div className="quantity_box">
+                          <div
+                            onClick={() => handleQuan(item.id, -1)}
+                            className="minus"
+                          >
+                            -
+                          </div>
+                          <p className="quantity">{item.quantity}</p>
+                          <div
+                            onClick={() => handleQuan(item.id, +1)}
+                            className="plus"
+                          >
+                            +
+                          </div>
+                        </div>
+                        <p className="totalProductPrice">
+                          ${item.price * item.quantity}
+                        </p>
+                        <FontAwesomeIcon onClick={() => removeProductid(item.id)} className="trash" icon={faTrash} />
+                      </div>
                     </div>
                   </div>
-                  <p className="totalProductPrice">$85</p>
-                </div>
-              </div>
-            </div>
+                );
+              })}
           </div>
           <div className="bottom">
             <div className="subtotal">
-                <h1>Subtotal</h1>
-                <p className="totalPrice">$45</p>
+              <h1>Subtotal</h1>
+              <p className="totalPrice">${nn}</p>
             </div>
             <p>Taxes and shipping are calculated at checkout</p>
             <button>Go to checkout</button>

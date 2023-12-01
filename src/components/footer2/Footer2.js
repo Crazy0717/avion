@@ -1,6 +1,9 @@
 import React from "react";
 import "./Footer2.scss";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faLinkedin, faPinterest, faSkype, faSquareFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+
 
 const Footer2 = () => {
   return (
@@ -19,13 +22,13 @@ const Footer2 = () => {
           <div className="icons">
             <h5>Social links</h5>
             <div className="icon">
-              <i class="fa-brands fa-linkedin"></i>
-              <i class="fa-brands fa-square-facebook"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-skype"></i>
-              <i class="fa-brands fa-twitter"></i>
-              <i class="fa-brands fa-pinterest"></i>
-            </div>
+            <FontAwesomeIcon className="i" icon={faLinkedin} />
+        <FontAwesomeIcon className="i" icon={faSquareFacebook} />
+        <FontAwesomeIcon className="i" icon={faInstagram} />
+        <FontAwesomeIcon className="i" icon={faSkype} />
+        <FontAwesomeIcon className="i" icon={faTwitter} />
+        <FontAwesomeIcon className="i" icon={faPinterest} />
+       </div>
           </div>
         </div>
 

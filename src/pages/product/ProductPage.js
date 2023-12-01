@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductPage.scss";
 import Navbar2 from "../../components/navbar2/Navbar2";
 import Ceramics from "../../components/newCeramics/Ceramics";
@@ -8,10 +8,28 @@ import Footer2 from "../../components/footer2/Footer2";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
-const CeramicsPage = ({ productId, setProductId, setBarState, barState }) => {
+const CeramicsPage = ({
+  cartQuantity,
+  setCartQuantity,
+  productId,
+  setProductId,
+  setBarState,
+  barState,
+}) => {
   const [quantityValue, setQuantityValue] = useState(1);
   const { id } = useParams();
+
   const [url, setUrl] = useState(`http://localhost:3000/data/${id}`);
+
+  useEffect(() => {
+    if (id > 4) {
+      setUrl(`http://localhost:3000/data2/${id}`);
+    }
+    if (id > 7) {
+      setUrl(`http://localhost:3000/data3/${id}`);
+    }
+  }, []);
+
   const { data, error, isPending } = useFetch(url);
 
   const handleQuan = () => {
@@ -19,22 +37,31 @@ const CeramicsPage = ({ productId, setProductId, setBarState, barState }) => {
       ? setQuantityValue(1)
       : setQuantityValue(quantityValue - 1);
   };
+
   const handleCart = () => {
-
-    setProductId([...productId, id]);
-
-
-    if (productId.includes(productId)) {
-      alert("❗ This product has been added to the cart");
+    if (productId.includes(data)) {
+      alert("❗️ This product has been added to the cart");
     } else {
-      setProductId([...productId, id]);
-      console.log(productId)
+      setProductId([...productId, data]);
     }
+    setCartQuantity(cartQuantity + 1);
   };
+
+  const handleTop = () => {
+    document.documentElement.scrollTop = 0;
+  };
+
+  useEffect(() => {
+    handleTop();
+  }, []);
 
   return (
     <div className="ceramics">
-      <Navbar2 setBarState={setBarState} barState={barState} />
+      <Navbar2
+        cartQuantity={cartQuantity}
+        setBarState={setBarState}
+        barState={barState}
+      />
       {data && (
         <div className="product_deatils">
           <div className="img_part">
@@ -42,7 +69,7 @@ const CeramicsPage = ({ productId, setProductId, setBarState, barState }) => {
           </div>
           <div className="info_part">
             <h1 className="title">{data.name}</h1>
-            <p className="price">{data.price}</p>
+            <p className="price">${data.price}</p>
             <div className="description">
               <h1>Description</h1>
               <p>

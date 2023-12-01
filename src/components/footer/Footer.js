@@ -1,6 +1,8 @@
 import React from "react";
 import "./Footer.scss";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faLinkedin, faPinterest, faSkype, faSquareFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -44,12 +46,12 @@ const Footer = () => {
       <div className="footer_bottom">
         <h2>Copyright 2022 Avion LTD</h2>
         <div className="icons">
-        <i class="fa-brands fa-linkedin"></i>
-        <i class="fa-brands fa-square-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-skype"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-pinterest"></i>
+        <FontAwesomeIcon className="i" icon={faLinkedin} />
+        <FontAwesomeIcon className="i" icon={faSquareFacebook} />
+        <FontAwesomeIcon className="i" icon={faInstagram} />
+        <FontAwesomeIcon className="i" icon={faSkype} />
+        <FontAwesomeIcon className="i" icon={faTwitter} />
+        <FontAwesomeIcon className="i" icon={faPinterest} />
         </div>
       </div>
     </footer>

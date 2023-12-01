@@ -6,17 +6,18 @@ import PopProducts from "../../components/pop_products/PopProducts";
 import Join from "../../components/join/Join";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import { Link } from "react-router-dom";
 
-const Home = ({ setBarState, barState }) => {
+const Home = ({cartQuantity, setBarState, barState }) => {
   return (
     <div className="home">
-      <Navbar setBarState={setBarState} barState={barState} />
+      <Navbar cartQuantity={cartQuantity} setBarState={setBarState} barState={barState} />
 
       <header>
         <div className="info_part">
           <div className="info_first">
             <h1>The furniture brand for the future, with timeless designs</h1>
-            <button>View collection</button>
+            <Link to={"/allproducts"}><button>View collection</button></Link>
           </div>
 
           <p>

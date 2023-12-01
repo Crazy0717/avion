@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import "./Ceramics.scss";
 import useFetch from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 
 const Ceramics = () => {
   const [url, setUrl] = useState("http://localhost:3000/data");
-  const { data, error, isPending } = useFetch(url);
+  const { data, error, isPending } = useFetch(url); 
+
   return (
     <>
       <div className="ceramics">
@@ -17,14 +18,15 @@ const Ceramics = () => {
                 <img src={item.image} alt="" />
               </div>
               <h2>{item.name}</h2>
-              <p>{item.price}</p>
+              <p>${item.price}</p>
             </Link>)
              
             })
           }
               
         </div>
-        <button className="view">View collection</button>
+        <Link to={"/allproducts"}><button className="view">View collection</button></Link>
+        
       </div>
     </>
   );

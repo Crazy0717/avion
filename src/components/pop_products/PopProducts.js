@@ -13,9 +13,9 @@ const PopProducts = () => {
       <div className="boxes">
       {
         data && data.map(item =>{
-          return (<Link to={`/ceramics/data2/${item.id}`} className="box" key={item.id}>
+          return (<Link to={`/ceramics/${item.id}`} className="box" key={item.id}>
           <div className="img_part">
-            <img src={item.img} alt="" />
+            <img src={item.image} alt="" />
           </div>
           <h2>{item.name}</h2>
           <p>${item.price}</p>

@@ -60,12 +60,25 @@
     .user_part {
       display: flex;
       gap: 16px;
-      i {
+      
+      a {
         color: #2a254b;
         cursor: pointer;
+        display: flex;
+        gap: 10px;
       }
       .phone {
         display: none;
+      }
+      .cartQuantity{
+        width: 19px;
+        height: 19px;
+        background-color: #2a254b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border-radius: 2px;
       }
     }
   }

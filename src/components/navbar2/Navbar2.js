@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCartShopping, faMagnifyingGlass, faTruckFast, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
-const Navbar2 = ({ setBarState, barState }) => {
+const Navbar2 = ({cartQuantity, setBarState, barState }) => {
   return (
     <nav className="navbar2">
       <div className="ad_part">
@@ -23,7 +23,7 @@ const Navbar2 = ({ setBarState, barState }) => {
         </Link>
         <ul>
           <li>
-            <NavLink to="/plant_pots">Plant pots</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
             <NavLink to="/ceramics">Ceramics</NavLink>
@@ -45,11 +45,12 @@ const Navbar2 = ({ setBarState, barState }) => {
           </li>
         </ul>
         <div className="user_part">
-          <Link>
+          <Link to={"/search"}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Link>
           <Link to={"/cart"}>
             <FontAwesomeIcon icon={faCartShopping} />
+          <div className="cartQuantity">{cartQuantity}</div>
           </Link>
           <Link>
             <FontAwesomeIcon icon={faUser} />

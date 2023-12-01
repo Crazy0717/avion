@@ -4,23 +4,22 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Bars from "../components/bars/Bars";
 // links
-import Plant_pots from "../pages/plant pots/Plant_pots";
 import CeramicsPage from "../pages/product/ProductPage";
 import Tables from "../pages/tables/Tables";
 import Chairs from "../pages/chairs/Chairs";
 import Crockery from "../pages/crockery/Crockery";
 import Tableware from "../pages/tableware/Tableware";
 import Cutlery from "../pages/cutlery/Cutlery";
-import useFetch from "../hooks/useFetch";
 import Cart from "../pages/cart/Cart";
 import About from "../pages/about/About";
 import AllPraducts from "../pages/AllPraducts/AllPraducts";
+import Search from "../pages/Search/Search";
 const App = () => {
   const [barState, setBarState] = useState(false);
 
-  const [url, setUrl] = useState("https://restcountries.com/v3.1/all");
-  const { data, error, isPending } = useFetch(url);
   const [productId, setProductId] = useState([]);
+  const [cartQuantity, setCartQuantity] = useState(0);  
+
 
   return (
     <div className="App">
@@ -29,18 +28,26 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<Home setBarState={setBarState} barState={barState} />}
+            element={
+              <Home
+                cartQuantity={cartQuantity}
+                setBarState={setBarState}
+                barState={barState}
+              />
+            }
           />
-          <Route
+          {/* <Route
             path="/plant_pots"
             element={
               <Plant_pots setBarState={setBarState} barState={barState} />
             }
-          />
+          /> */}
           <Route
             path="/ceramics/:id"
             element={
               <CeramicsPage
+                cartQuantity={cartQuantity}
+                setCartQuantity={setCartQuantity}
                 setProductId={setProductId}
                 productId={productId}
                 setBarState={setBarState}
@@ -55,10 +62,20 @@ const App = () => {
           <Route path="/cuterly" element={<Cutlery />} />
           <Route
             path="/cart"
-            element={<Cart setBarState={setBarState} barState={barState} />}
+            element={
+              <Cart
+                cartQuantity={cartQuantity}
+                setCartQuantity={setCartQuantity}
+                productId={productId}
+                setProductId={setProductId}
+                setBarState={setBarState}
+                barState={barState}
+              />
+            }
           />
           <Route path="/about" element={<About />} />
           <Route path="/allproducts" element={<AllPraducts />} />
+          <Route path="/search" element={<Search />}/>
         </Routes>
       </BrowserRouter>
     </div>
